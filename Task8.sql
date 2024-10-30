@@ -9,7 +9,7 @@ contract_emails as (
 	Select active_contract.сontract_number, active_contract.contract_code, 
 	active_contract.service, active_contract.package_link, email.e_mail
 	from active_contract
-	left join email on active_contract.сontract_number = email.сontract_number
+	Left Join email on active_contract.сontract_number = email.сontract_number
 )
 
 Select сontract_number, array_agg(contract_code) as array_сontract_code, array_agg(service) as array_service 
